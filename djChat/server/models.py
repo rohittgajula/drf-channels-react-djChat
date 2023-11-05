@@ -17,7 +17,7 @@ class Server(models.Model):
     member = models.ManyToManyField(settings.AUTH_USER_MODEL)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}-{self.id}"
 
 class Channel(models.Model):
     name = models.CharField(max_length=100)
@@ -27,7 +27,7 @@ class Channel(models.Model):
 
     def save(self, *args, **kwargs):
         self.name = self.name.lower()
-        super(Channel, self).save(*args, **kwargs)
+        super(Channel, self).save(*args, **kwargs)  # super() is used to calls save() method from "Channel" class. To ensure that overriding save() method is executed.
 
     def __str__(self):
         return self.name
