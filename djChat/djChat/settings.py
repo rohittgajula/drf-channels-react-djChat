@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # external
-    'drf_spectacular',
+    'drf_spectacular',          # for schema
     'rest_framework',
     # internal
     "account",
